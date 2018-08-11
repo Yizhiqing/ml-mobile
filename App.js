@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, Image, Button, Alert } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Image, Button, Alert, TouchableHighlight } from 'react-native';
 
 export default class App extends Component {
   constructor(props) {
@@ -9,6 +9,10 @@ export default class App extends Component {
 
   _onPressButton() {
     Alert.alert('轻点好不！')
+  }
+
+  _onLongPressButton() {
+    Alert.alert('You long-pressed the button!')
   }
 
   render() {
@@ -49,6 +53,11 @@ export default class App extends Component {
                 title="Press Me"
                 color="#841584"
               />
+              <TouchableHighlight onPress={this._onPressButton} onLongPress={this._onLongPressButton} underlayColor="white">
+                <View style={styles.button}>
+                  <Text style={styles.buttonText}>Touchable with Long Press</Text>
+                </View>
+              </TouchableHighlight>
         </View>
           </View>
         </View>
@@ -89,5 +98,15 @@ const styles = StyleSheet.create({
   },
   red: {
     color: 'red',
+  },
+  button: {
+    marginBottom: 30,
+    width: 260,
+    alignItems: 'center',
+    backgroundColor: '#2196F3'
+  },
+  buttonText: {
+    padding: 20,
+    color: 'white'
   },
 });
