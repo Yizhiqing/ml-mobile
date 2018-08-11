@@ -1,5 +1,5 @@
 import React from 'react';
-import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import Feed from '../screens/Feed';
@@ -22,7 +22,7 @@ export const FeedStack = createStackNavigator({
   },
 });
 
-export const Tabs = createMaterialTopTabNavigator({
+export const Tabs = createBottomTabNavigator({
   Feed: {
     screen: FeedStack,
     navigationOptions: {
