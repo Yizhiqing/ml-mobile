@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, Image } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Image, Button, Alert } from 'react-native';
 
 export default class App extends Component {
   constructor(props) {
@@ -33,11 +33,15 @@ export default class App extends Component {
         <View style={{flex:1, width: 150, height: 150, backgroundColor: 'steelblue'}} >
           <View style={{flex: 1, flexDirection: 'column', justifyContent: 'space-between',alignItems: 'center',}}>
             <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
-            <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
             <View style={{width: 50, height: 50, backgroundColor: 'red'}} />
+            <Button
+              onPress={() => {
+                Alert.alert('You tapped the button!');
+              }}
+              title="Press Me"
+            />
           </View>
         </View>
-        <View style={{flex:1, width: 150, height: 150, backgroundColor: 'skyblue'}} />
       </View>
     );
   }
