@@ -7,6 +7,24 @@ export default class App extends Component {
     this.state = { text: '' };
   }
 
+  componentDidMount(){
+    return fetch('https://facebook.github.io/react-native/movies.json')
+      .then((response) => response.json())
+      .then((responseJson) => {
+
+        this.setState({
+          isLoading: false,
+          dataSource: responseJson.movies,
+        }, function(){
+
+        });
+
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
+  }
+
   _onPressButton() {
     Alert.alert('轻点好不！')
   }
@@ -60,27 +78,7 @@ export default class App extends Component {
             </TouchableHighlight>
           </View>
         </View>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
-        <Text>Repeated!</Text>
+        <Text>{JSON.stringify(this.state.dataSource)}</Text>
         <View style={styles.container}>
         <FlatList
           data={[
