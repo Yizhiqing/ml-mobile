@@ -1,5 +1,5 @@
 import React from 'react';
-import { TabNavigator, StackNavigator } from 'react-navigation';
+import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import Feed from '../screens/Feed';
@@ -7,7 +7,7 @@ import Settings from '../screens/Settings';
 import UserDetail from '../screens/UserDetail';
 import Me from '../screens/Me';
 
-export const FeedStack = StackNavigator({
+export const FeedStack = createStackNavigator({
   Feed: {
     screen: Feed,
     navigationOptions: {
@@ -22,7 +22,7 @@ export const FeedStack = StackNavigator({
   },
 });
 
-export const Tabs = TabNavigator({
+export const Tabs = createMaterialTopTabNavigator({
   Feed: {
     screen: FeedStack,
     navigationOptions: {
@@ -39,7 +39,7 @@ export const Tabs = TabNavigator({
   },
 });
 
-export const SettingsStack = StackNavigator({
+export const SettingsStack = createStackNavigator({
   Settings: {
     screen: Settings,
     navigationOptions: {
@@ -48,7 +48,7 @@ export const SettingsStack = StackNavigator({
   },
 });
 
-export const Root = StackNavigator({
+export const Root = createStackNavigator({
   Tabs: {
     screen: Tabs,
   },
