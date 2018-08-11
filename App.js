@@ -7,6 +7,10 @@ export default class App extends Component {
     this.state = {text: ''};
   }
 
+  _onPressButton() {
+    Alert.alert('轻点好不！')
+  }
+
   render() {
     let pic = {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Cavendish_Banana_DS.jpg/1200px-Cavendish_Banana_DS.jpg'
@@ -34,15 +38,20 @@ export default class App extends Component {
           <View style={{flex: 1, flexDirection: 'column', justifyContent: 'space-between',alignItems: 'center',}}>
             <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
             <View style={{width: 50, height: 50, backgroundColor: 'red'}} />
-            <Button
-              onPress={() => {
-                Alert.alert('You tapped the button!');
-              }}
-              title="Press Me"
-            />
+              <Button
+                onPress={() => {
+                  Alert.alert('You tapped the button!');
+                }}
+                title="按按我好不好嘛"
+              />
+              <Button
+                onPress={this._onPressButton}
+                title="Press Me"
+                color="#841584"
+              />
+        </View>
           </View>
         </View>
-      </View>
     );
   }
 }
