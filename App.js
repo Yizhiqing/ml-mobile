@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Image } from 'react-native';
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {text: ''};
+  }
+
   render() {
     let pic = {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Cavendish_Banana_DS.jpg/1200px-Cavendish_Banana_DS.jpg'
@@ -10,6 +15,14 @@ export default class App extends Component {
       <View style={{flex: 1}}>
         <View style={{flex:2}}>
           <View style={styles.container}>
+            <TextInput
+              style={{height: 40, width:200}}
+              placeholder="请在这里输入点东西吧。"
+              onChangeText={(text) => this.setState({text})}
+            />
+            <Text style={{padding: 10, fontSize: 42}}>
+              {this.state.text}
+            </Text>
             <Text>This is my first mobile application.</Text>
             <Text>这是我的第一个移动应用。</Text>
             <Text>俺の初めてのモバイルアプリだよ。</Text>
