@@ -11,12 +11,14 @@ export default class App extends Component {
         <View style={{flex:2}}>
           <View style={styles.container}>
             <Text>This is my first mobile application.</Text>
+            <Text>这是我的第一个移动应用。</Text>
+            <Text>俺の初めてのモバイルアプリだよ。</Text>
             <Image source={pic} style={{width: 193, height: 110}}/>
             <Greeting name='Rexxar' />
           </View>
         </View>
         <View style={{flex:1, width: 150, height: 150, backgroundColor: 'steelblue'}} >
-          <View style={{flex: 1, flexDirection: 'row'}}>
+          <View style={{flex: 1, flexDirection: 'column', justifyContent: 'space-between',alignItems: 'center',}}>
             <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
             <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
             <View style={{width: 50, height: 50, backgroundColor: 'red'}} />
